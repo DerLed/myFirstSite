@@ -1,0 +1,28 @@
+{% extends 'todo/base.html' %}
+
+{% block content %}
+    <h1>{{count}}</h1>
+    {% for p in posts %}
+        {% if p.is_solved %}
+            <div class="task-complete">
+                <i><s><a href="{% url 'task-update' p.id %}"><h1>{{p.title}}</h1></a></s></i>
+                <hr>
+                <p class="description">{{p.description}}</p>
+                <a href="{% url 'task-delete' p.id %}">Delte</a>
+                <p class="author">{{p.author}}</p>
+            </div>
+        {% else %}
+            <div class="task-incomplete">
+                <a href="{% url 'task-update' p.id %}"><h1>{{p.title}}</h1></a>
+                <hr>
+                <p class="description">{{p.description}}</p>
+                <a href="{% url 'task-delete' p.id %}">Delte</a>
+                <p class="author">{{p.author}}</p>
+            </div>
+        {% endif %}
+    {% empty%}
+        <h1>У вас нет задач</h1>
+
+    {% endfor %}
+
+{% endblock %}

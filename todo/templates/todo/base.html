@@ -1,0 +1,80 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Play:wght@700&display=swap" rel="stylesheet">
+
+    <link type="text/css" href="{% static 'todo/css/styles.css' %}" rel="stylesheet" />
+</head>
+
+<body>
+
+
+<div class="container">
+    <header class="page-header">
+        <h1 class="title-app">Лист задач</h1>
+        <div class="header-menu">
+            <ul>
+                {% if request.user.is_authenticated %}
+                    <li>
+                        <a>Здравствуйте {{ user.username }}</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'addtask' %}">Добавить задачу</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'logout' %}">Выйти</a>
+                    </li>
+
+                {% else %}
+                    <li>
+                        <a href="{% url 'signup' %}">Регистрация</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'login' %}">Войти</a>
+                    </li>
+                {% endif %}
+            </ul>
+        </div>
+        <hr>
+    </header>
+
+    {% block content %}
+    {% endblock %}
+
+</div>
+
+<!--{% block addtask %}-->
+<!--{% endblock %}-->
+<!--{% block mainmenu %}-->
+<!--<div class="vertical-menu">-->
+<!--    <ul>-->
+
+<!--        {% for m in  menu %}-->
+<!--        <li color="red" >-->
+<!--            <a href="{% url m.url_name %}">{{m.title}}</a>-->
+<!--        </li>-->
+<!--        {% endfor %}-->
+
+<!--        {% if request.user.is_authenticated %}-->
+<!--            <li>{{ user.username }}</li>-->
+<!--            <li><a href="{% url 'logout' %}">Выйти</a></li>-->
+<!--        {% else %}-->
+<!--            <li>-->
+<!--                <a href="{% url 'signup' %}">Регистрация</a>-->
+<!--            </li>-->
+<!--            <li>-->
+<!--                <a href="{% url 'login' %}">Войти</a>-->
+<!--            </li>-->
+<!--        {% endif %}-->
+
+<!--    </ul>-->
+<!--</div>-->
+<!--{% endblock %}-->
+</body>
+</html>

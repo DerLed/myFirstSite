@@ -1,0 +1,10 @@
+{% extends 'todo/base.html' %}
+
+{% block content %}
+<form method="POST">
+    {% csrf_token %}
+    <p>A?{{todo}}</p>
+    <input type="submit" value="Удалить" />
+    <a href="{% url 'index' %}">Назад</a>
+</form>
+{% endblock %}

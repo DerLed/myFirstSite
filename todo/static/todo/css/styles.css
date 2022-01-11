@@ -1,0 +1,100 @@
+body{
+    font-family: 'Play', sans-serif;
+}
+
+header{
+    background: linear-gradient(#1F2833, #0a1217);
+    position: relative;
+}
+
+.header-menu{
+    position: absolute;
+    right: 0px;
+    top: 0px;
+
+}
+
+.header-menu ul{
+    list-style-type: none;
+    margin-left: 0; /* Отступ слева в браузере IE и Opera */
+    padding-left: 0; /* Отступ слева в браузере Firefox, Safari, Chrome */
+}
+
+.header-menu a {
+    color: #66FCF1;
+    display: block; /* Make the links appear below each other */
+    padding: 12px; /* Add some padding */
+    padding-bottom: 0px;
+    padding-top: 0px;
+    list-style-type: none;
+    text-decoration: none; /* Remove underline from links */
+}
+
+.header-menu a:hover {
+    background-color: #05386B; /* Dark grey background on mouse-over */
+}
+
+.header-menu a.active {
+    background-color: #4CAF50; /* Add a green color to the "active/current" link */
+    color: white;
+}
+
+.title-app{
+    color: #66FCF1
+
+}
+.container{
+    max-width: 550px;
+    margin: auto;
+}
+
+.task-incomplete {
+    color: #acdbff;
+    text-align: center;
+    background-color: #0a1217;
+    border-radius: 15px 15px 0px 15px;
+}
+
+.task-complete {
+    color: #acdbff;
+    text-align: center;
+    background-color: #0a1217;
+    border-radius: 15px 15px 0px 15px;
+}
+
+.author {
+    text-align: right;
+}
+
+.vertical-menu {
+    width: 200px;
+    color: red;
+    position: absolute;
+}
+
+.description {
+    word-break: break-word;
+    padding-right: 20px;
+    padding-left: 20px;
+}
+
+.vertical-menu ul {
+
+}
+
+.vertical-menu a {
+    background-color: #eee; /* Grey background color */
+    color: black; /* Black text color */
+    display: block; /* Make the links appear below each other */
+    padding: 12px; /* Add some padding */
+    text-decoration: none; /* Remove underline from links */
+}
+
+.vertical-menu a:hover {
+    background-color: #ccc; /* Dark grey background on mouse-over */
+}
+
+.vertical-menu a.active {
+    background-color: #4CAF50; /* Add a green color to the "active/current" link */
+    color: white;
+}
