@@ -49,16 +49,16 @@ header{
 }
 
 .task-incomplete {
-    color: #acdbff;
+    color: #4C5866;
     text-align: center;
-    background-color: #0a1217;
+    background-color: #DBD7D2;
     border-radius: 15px 15px 0px 15px;
 }
 
 .task-complete {
-    color: #acdbff;
+    color: #4C5866;
     text-align: center;
-    background-color: #0a1217;
+    background-color: #DBD7D2;
     border-radius: 15px 15px 0px 15px;
 }
 
@@ -97,4 +97,11 @@ header{
 .vertical-menu a.active {
     background-color: #4CAF50; /* Add a green color to the "active/current" link */
     color: white;
+}
+
+.task-title {
+    background-color: #eee; /* Grey background color */
+    color: black; /* Black text color */
+    display: block; /* Make the links appear below each other */
+    text-decoration: none; /* Remove underline from links */
 }

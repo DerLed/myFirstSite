@@ -5,15 +5,13 @@
     {% for p in posts %}
         {% if p.is_solved %}
             <div class="task-complete">
-                <i><s><a href="{% url 'task-update' p.id %}"><h1>{{p.title}}</h1></a></s></i>
-                <hr>
-                <p class="description">{{p.description}}</p>
+                <i><s><a class="task-title" href="{% url 'task-update' p.id %}"><h1>{{p.title}}</h1></a></s></i>
                 <a href="{% url 'task-delete' p.id %}">Delte</a>
                 <p class="author">{{p.author}}</p>
             </div>
         {% else %}
             <div class="task-incomplete">
-                <a href="{% url 'task-update' p.id %}"><h1>{{p.title}}</h1></a>
+                <a class="task-title"  href="{% url 'task-update' p.id %}"><h1>{{p.title}}</h1></a>
                 <hr>
                 <p class="description">{{p.description}}</p>
                 <a href="{% url 'task-delete' p.id %}">Delte</a>
