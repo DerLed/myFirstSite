@@ -10,4 +10,5 @@ urlpatterns = [
     path('task-update/<int:pk>/', TaskUpdate.as_view(), name='task-update'),
     path('login/', LoginUser.as_view(), name='login'),
     path('logout/', logout_user, name='logout'),
+    path('complete/<int:pk>/', Complete.as_view(), name='complete'),
 ]

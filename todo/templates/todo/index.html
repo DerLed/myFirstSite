@@ -11,10 +11,12 @@
             </div>
         {% else %}
             <div class="task-incomplete">
+
                 <a class="task-title"  href="{% url 'task-update' p.id %}"><h1>{{p.title}}</h1></a>
                 <hr>
-                <p class="description">{{p.description}}</p>
-                <a href="{% url 'task-delete' p.id %}">Delte</a>
+                <div class="column-c"><p class="description">{{p.description}}</p></div>
+                <div class="column-l"><a class="task-title" href="{% url 'complete' p.id %}">☑</a></div>
+                <div class="column-r"><a class="task-title" href="{% url 'task-delete' p.id %}">Delte</a></div>
                 <p class="author">{{p.author}}</p>
             </div>
         {% endif %}

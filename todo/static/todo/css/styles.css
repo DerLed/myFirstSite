@@ -105,3 +105,19 @@ header{
     display: block; /* Make the links appear below each other */
     text-decoration: none; /* Remove underline from links */
 }
+.column-l {
+    float: left;
+    width: 15%;
+        display: block; /* Make the links appear below each other */
+    text-decoration: none; /* Remove underline from links */
+}
+.column-r{
+    float: right;
+    width: 15%;
+    display: block; /* Make the links appear below each other */
+    text-decoration: none; /* Remove underline from links */
+}
+.column-c{
+    display: inline-block;
+    width: 70%;
+}

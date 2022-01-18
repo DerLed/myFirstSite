@@ -1,11 +1,12 @@
 from django.contrib.auth import logout
 from django.contrib.auth.forms import AuthenticationForm
-from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
 from django.contrib.auth.views import LoginView
 from django.http import Http404
-from django.shortcuts import render, HttpResponse, redirect
+from django.shortcuts import render, HttpResponse, redirect, get_object_or_404
 from django.urls import reverse_lazy
-from django.views.generic import ListView, CreateView, UpdateView, DeleteView
+from django.views import View
+from django.views.generic import ListView, CreateView, UpdateView, DeleteView, TemplateView
 
 from .forms import *
 from .models import *
@@ -38,6 +39,17 @@ class AddTask(LoginRequiredMixin, DataMixin, CreateView):
     def form_valid(self, form):
         form.instance.author = self.request.user
         form.save()
+        return redirect('index')
+
+
+class Complete(LoginRequiredMixin, View):
+
+    def get(self, request, pk):
+        todo = get_object_or_404(Todo, pk=pk)
+        if not todo.author == request.user:
+            raise Http404()
+        todo.is_solved = True
+        todo.save()
         return redirect('index')
 
 
